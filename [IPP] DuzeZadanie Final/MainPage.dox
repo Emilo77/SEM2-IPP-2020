@@ -1,0 +1,44 @@
+/**
+@mainpage Dokumentacja zadania wielomiany
+
+### Treść zadania
+
+Uwaga: aktualna treść zadania znajduje się w [Moodle](https://moodle.mimuw.edu.pl).
+
+Tegoroczne duże zadanie polega na zaimplementowaniu operacji na wielomianach
+rzadkich wielu zmiennych.
+
+Głównym celem zadania jest dogłębne zrozumienie rekurencji i jej praktycznych zastosowań.
+
+### Opis programu
+
+Program kalkulatora czyta dane wierszami ze standardowego wejścia. Wiersz
+zawiera wielomian lub polecenie do wykonania. Wielomian reprezentujemy jako
+stałą, jednomian lub sumę jednomianów. Stała jest liczbą całkowitą. Jednomian
+reprezentujemy jako parę (coeff,exp), gdzie współczynnik coeff jest wielomianem,
+a wykładnik exp jest liczbą nieujemną.
+
+Program zawiera implementację kalkulatora wielomianów na stosie. Operacje na
+kalkulatorze to między innymi dodawanie, odejmowanie, mnożenie i ich
+porównywanie. Program zapewnia możliwość wypisania wielomianów w najprostszej
+postaci.
+
+### Część pierwsza
+
+Jako pierwszą część zadania należy zaimplementować bibliotekę podstawowych
+operacji na wielomianach rzadkich wielu zmiennych.
+
+### Część druga
+
+Jako drugą część zadania należy zaimplementować kalkulator działający na
+wielomianach i stosujący odwrotną notację polską.
+
+### Część trzecia
+
+Celem trzeciej części zadania jest dokończenie programu kalkulatora działającego
+ na wielomianach rzadkich wielu zmiennych. Oczekujemy poprawienia ewentualnych
+ błędów z poprzednich części zadania oraz wprowadzenie opisanych poniżej
+ modyfikacji i rozszerzeń. Obowiązują ustalenia z treści poprzednich części
+ zadania i z forum dyskusyjnego dla studentów.
+
+*/
