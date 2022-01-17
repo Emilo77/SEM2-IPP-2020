@@ -1,0 +1,96 @@
+# umieszczone są tylko testy które nie są odpowiedziami
+# typu "Sposób ich traktowania zależy od przyjętej wewnętrznej reprezentacji słów"
+# bo dla nich nie ma poprawnej odpowiedzi
+
+# równe (śro, 10 mar 2021, 11:32)
+011
+9
+
+# równe (śro, 10 mar 2021, 11:32)
+08
+8
+
+# duże liczby (śro, 10 mar 2021, 16:23)
+19000000000000000000.0
+20e20
+
+ # to nie jest komentarz (śro, 10 mar 2021, 16:43)
+
+# różne (śro, 10 mar 2021, 18:06)
+a
+0xa
+
+# różne (śro, 10 mar 2021, 22:21)
++0x1
+0x1
+
+# równe (śro, 10 mar 2021, 22:21)
++02
+02
+
+# równe (śro, 10 mar 2021, 22:21)
++070
+70
+
+# równe (sob, 13 mar 2021, 18:14)
+-1e1
+-1e+1
+-10.
+-100e-1
+
+# równe (sob, 13 mar 2021, 18:14)
+inF
++INF
+
+# różne (sob, 13 mar 2021, 18:14)
+00x3
+0x3
+-0x3
+-3
+
+# równe (sob, 13 mar 2021, 18:14)
+# btw nienawidzę osoby która zadała to pytanie
+0x
+0
+
+# równe (nie, 14 mar 2021, 11:20)
+01.1
++1.1
+
+# nieliczba (sob, 13 mar 2021, 23:36)
+-.e2
+# liczby do przetestowania, że powyższe są nieliczbami
+0e2
+-1e2
+
+# różne (śro, 17 mar 2021, 17:57)
+7e1.1e3
+70.0
+7e1100
+
+# różne (pią, 19 mar 2021, 02:23)
+# btw nienawidzę osoby która zadała to pytanie
+0x0.8
+0.5
+
+# różne (pią, 19 mar 2021, 17:13)
+18446744073709551615
+18446744073709551614
+
+# nieliczby (pon, 22 mar 2021, 17:44)
++
+-
+# liczby do przetestowania, że powyższe są nieliczbami
+0
+1
+-1
+
+# nieliczby (pon, 22 mar 2021, 20:26)
+e0
+1e1.
+e2
+# liczby do przetestowania, że powyższe są nieliczbami
+0
+1
+10
+100

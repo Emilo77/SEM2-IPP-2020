@@ -1,0 +1,16 @@
+set(SOURCE_FILES
+    src/poly.c
+    src/poly.h
+    src/poly_example.c
+	src/testy-duze-zadanie-1/helper_functions_from_example.c
+	src/testy-duze-zadanie-1/stresslib.c
+	src/testy-duze-zadanie-1/test.c
+	src/testy-duze-zadanie-1/example.c
+	src/testy-duze-zadanie-1/stress.c
+	src/testy-duze-zadanie-1/stress_output.c
+	src/testy-duze-zadanie-1/stress_output.h
+	src/testy-duze-zadanie-1/corner_add_monos.h
+	src/testy-duze-zadanie-1/corner_poly_add.h
+	src/testy-duze-zadanie-1/corner_various_tests.h
+	src/testy-duze-zadanie-1/corner_cases.h
+	src/testy-duze-zadanie-1/poly_at_complexity.h)

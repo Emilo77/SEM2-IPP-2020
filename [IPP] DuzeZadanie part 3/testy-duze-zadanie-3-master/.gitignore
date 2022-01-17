@@ -1,0 +1,6 @@
+*.cpp
+*.py
+*.sh
+*.c
+*.h
+!poly_test.c

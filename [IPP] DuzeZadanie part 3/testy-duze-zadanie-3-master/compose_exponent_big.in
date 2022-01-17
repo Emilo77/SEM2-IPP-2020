@@ -1,0 +1,6 @@
+# UWAGA: performance test, wynik może zależeć od implementacji
+# Konwencja przy overflowujących liczbach jest domyślna dla języka C
+((3,1),3)
+(1,2147483647)
+COMPOSE 1
+PRINT
