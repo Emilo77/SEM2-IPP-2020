@@ -30,7 +30,7 @@ Jako rozwiązanie części 1 zadania wymagamy:
 - uzupełnienia dokumentacji w formacie `doxygen` tak, aby była przydatna dla programistów rozwijających moduł.
 
 Powinna być możliwość skompilowania rozwiązania w dwóch wersjach: release i debug. Wersję release kompiluje się za pomocą sekwencji poleceń:
-```c
+```console
 mkdir release
 cd release
 cmake ..
@@ -40,7 +40,7 @@ make doc
 
 Wersję debug kompiluje się za pomocą sekwencji poleceń:
 
-```c
+```console
 mkdir debug
 cd debug
 cmake -D CMAKE_BUILD_TYPE=Debug ..
@@ -50,7 +50,7 @@ make doc
 
 W wyniku kompilacji odpowiednio w katalogu `release` lub `debug` powinien powstać plik wykonywalny `poly` oraz dokumentacja. W poleceniu `cmake` powinno być również możliwe jawne określenie wariantu release budowania pliku wynikowego:
 
-```
+```console
 cmake -D CMAKE_BUILD_TYPE=Release ..
 ```
 
@@ -121,7 +121,7 @@ Program kalkulatora czyta dane wierszami ze standardowego wejścia. Wiersz zawie
 
 Wielomian reprezentujemy jako stałą, jednomian lub sumę jednomianów. Stała jest liczbą całkowitą. Jednomian reprezentujemy jako parę `(coeff,exp)`, gdzie współczynnik `coeff` jest wielomianem, a wykładnik `exp` jest liczbą nieujemną. Do wyrażenia sumy używamy znaku `+`. Jeśli wiersz zawiera wielomian, to program wstawia go na stos. Przykłady poprawnych wielomianów:
 
-```
+```c
 0
 1
 -2
@@ -154,7 +154,7 @@ Kalkulator wykonuje następujące polecenia:
 - `POP` – usuwa wielomian z wierzchołka stosu.
 
 Wypisywany poleceniem `PRINT` wielomian powinien mieć jak najprostszą postać. Wykładniki wypisywanych jednomianów nie powinny się powtarzać. Jednomiany powinny być posortowane rosnąco według wykładników. Podane wyżej wielomiany powinny zostać wypisane następująco:
-```
+```c
 0
 1
 -2
@@ -177,23 +177,23 @@ Program nie powinien zakładać maksymalnej długości wiersza. Poprawny wiersz 
 Ignorujemy wiersze zaczynające się znakiem `#` i puste. Jeśli wiersz zaczyna się małą lub wielką literą alfabetu angielskiego, to uznajemy, że zawiera polecenie. W pozostałych przypadkach uznajemy, że wiersz opisuje wielomian.
 
 Jeśli program wykryje niepoprawną nazwę polecenia, wypisuje:
-```
+```c
 ERROR w WRONG COMMAND\n
 ```
 Jeśli w poleceniu `DEG_BY` nie podano parametru lub jest on niepoprawny, program wypisuje:
-```
+```c
 ERROR w DEG BY WRONG VARIABLE\n
 ```
 Jeśli w poleceniu `AT` nie podano parametru lub jest on niepoprawny, program wypisuje:
-```
+```c
 ERROR w AT WRONG VALUE\n
 ```
 Jeśli na stosie jest za mało wielomianów, aby wykonać polecenie, program wypisuje:
-```
+```c
 ERROR w STACK UNDERFLOW\n
 ```
 Jeśli program wykryje błąd podczas parsowania wielomianu, wypisuje
-```
+```c
 ERROR w WRONG POLY\n
 ```
 Wartość współczynnika jednomianu lub parametru polecenia `AT` uznajemy za niepoprawną, jeśli jest mniejsza od `-9223372036854775808` lub większa od `9223372036854775807`.
@@ -316,21 +316,21 @@ Poly PolyCompose(const Poly *p, size_t k, const Poly q[]);
 ```
 
 Do interfejsu kalkulatora należy dodać polecenie
-```
+```c
 COMPOSE k
 ```
 Polecenie to zdejmuje z wierzchołka stosu najpierw wielomian p, a potem kolejno wielomiany `q[k - 1], q[k - 2], … , q[0]` i umieszcza na stosie wynik operacji złożenia.
 
 Jeśli w poleceniu `COMPOSE` nie podano parametru lub jest on niepoprawny, program powinien wypisać na standardowe wyjście diagnostyczne:
 
-```
+```c
 ERROR w COMPOSE WRONG PARAMETER\n
 ```
 
 Wartość parametru polecenia `COMPOSE` uznajemy za niepoprawną, jeśli jest mniejsza od 0 lub większa od `18446744073709551615`.
 
 Jeśli na stosie jest za mało wielomianów, aby wykonać polecenie, program powinien wypisać na standardowe wyjście diagnostyczne:
-```
+```c
 ERROR w STACK UNDERFLOW\n
 ```
 
@@ -364,7 +364,7 @@ pod *x<sub>0</sub>* w wielomianie *x<sup>3</sup><sub>0</sub>*, więc w jego wyni
 ## Przykład 2
 
 Dla danych wejściowych:
-```
+```c
 (1,4)
 ((1,0)+(1,1),1)
 (((1,6),5),2)+((1,0)+(1,2),3)+(5,7)
@@ -372,7 +372,7 @@ COMPOSE 2
 PRINT
 ```
 Jako wynik działania programu powinniśmy zobaczyć:
-```
+```c
 (1,12)+((1,0)+(2,1)+(1,2),14)+(5,28)
 ```
 
@@ -380,7 +380,7 @@ Jako wynik działania programu powinniśmy zobaczyć:
 
 Dla danych wejściowych:
 
-```
+```c
 ((1,0)+(1,1),1)
 (1,4)
 COMPOSE -1
@@ -389,7 +389,7 @@ COMPOSE 18446744073709551615
 
 Jako wynik działania programu powinniśmy zobaczyć:
 
-```
+```c
 ERROR 3 COMPOSE WRONG PARAMETER
 ERROR 4 STACK UNDERFLOW
 ```
@@ -402,7 +402,7 @@ Dodany kod należy udokumentować w formacie doxygen.
 
 Należy dodać możliwość utworzenia pliku wykonywalnego z testami biblioteki poly. Czyli na przykład po wykonaniu:
 
-```c
+```console
 mkdir release
 cd release
 cmake ..
@@ -415,7 +415,7 @@ Funkcja `main` kalkulatora ma się znajdować w pliku `src/calc.c`. Funkcja main
 
 Wskazówka: W pliku `CMakeList.txt` można dodać polecenia
 
-```
+```cmake
 # Wskazujemy plik wykonywalny testów biblioteki.
 add_executable(test EXCLUDE_FROM_ALL ${TEST_SOURCE_FILES})
 set_target_properties(test PROPERTIES OUTPUT_NAME poly_test)
@@ -433,7 +433,7 @@ Rozwiązanie części 3 zadania powinno korzystać z własnego rozwiązania popr
 
 Rozwiązanie należy oddawać, podobnie jak części 1 i 2, przez repozytorium git. W repozytorium mają się znaleźć wszystkie pliki niezbędne do zbudowania plików wykonywalnych i dokumentacji, i tylko te pliki. **W repozytorium nie wolno umieszczać plików binarnych ani tymczasowych.** W Moodle jako rozwiązanie należy umieścić tekst zawierający identyfikator commitu finalnej wersji rozwiązania, na przykład:
 
-```
+```c
 518507a7e9ea50e099b33cb6ca3d3141bc1d6638
 ```
 
